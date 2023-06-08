@@ -25,6 +25,7 @@ public class Artwork {
     private int value;
 
     @Column(name="rarity")
+    @Enumerated(EnumType.STRING)
     private RarityLevel rarityLevel;
 
     @Column(name="url")

@@ -29,7 +29,7 @@ public class Game {
     private Player player;
 
     @JsonIgnoreProperties({"games", "artwork"})
-    @OneToMany(mappedBy = "games")
+    @OneToMany(mappedBy = "game")
     private List<ArtworkInGame> artworks;
 
     public Game(Player player) {
