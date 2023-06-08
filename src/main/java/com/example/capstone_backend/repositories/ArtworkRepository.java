@@ -1,4 +1,7 @@
 package com.example.capstone_backend.repositories;
 
-public interface ArtworkRepository {
+import com.example.capstone_backend.models.Artwork;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface ArtworkRepository extends JpaRepository<Artwork, Long> {
 }

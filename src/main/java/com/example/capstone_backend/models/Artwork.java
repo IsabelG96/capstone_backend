@@ -34,11 +34,7 @@ public class Artwork {
     @OneToMany(mappedBy = "artwork")
     private List<ArtworkInGame> games;
 
-//    @OneToMany
-//    @JoinColumn(name="")
-//    @Column(name="games")
-//    private ArrayList<ArtworkInGame> artworkInGames;
-//
+
 
 
     public Artwork(String artist, String title, int value, RarityLevel rarityLevel, String url) {
