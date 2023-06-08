@@ -3,8 +3,10 @@ package com.example.capstone_backend.services;
 
 import com.example.capstone_backend.models.Artwork;
 import com.example.capstone_backend.models.ArtworkInGame;
+import com.example.capstone_backend.models.Game;
 import com.example.capstone_backend.repositories.ArtworkInGameRepository;
 import com.example.capstone_backend.repositories.ArtworkRepository;
+import com.example.capstone_backend.repositories.GameRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -21,6 +23,9 @@ public class ArtworkInGameService {
 
     @Autowired
     ArtworkService artworkService;
+
+    @Autowired
+    GameRepository gameRepository;
 
 
     // get all artworks in game
@@ -40,25 +45,22 @@ public class ArtworkInGameService {
 
 
 
-    public Artwork getRandomArtwork(){
+    public void generateRandomArtworkList(Long gameId){
         Random randomId = new Random();
+
         Long random1 = randomId.nextLong(1, 11);
         Long random2 = randomId.nextLong(1, 11);
+// TODO: refactor into artwork and game service
+        Game game = gameRepository.findById(gameId).get();
+        // Artwork has artistName, title, value, rarityLevel, url, listOfArtworkInGame
+        Artwork artwork1 = artworkRepository.findById(random1).get();
+        Artwork artwork2 = artworkRepository.findById(random2).get();
 
-        List<ArtworkInGame> listOfArtwork = new ArrayList<>();
-//        Artwork artwork1 = artworkRepository.findById(random1).get();
-//
-//        Artwork artwork2 = artworkRepository.findById(random2).get();
-        listOfArtwork.add(random1);
-        listOfArtwork.setArtwork(Arrays.asList(artwork1, artwork2));
+        ArtworkInGame artworkInGame1 = new ArtworkInGame(game, artwork1);
+        ArtworkInGame artworkInGame2 = new ArtworkInGame(game, artwork2);
 
-        return null;
-
-
-
-
-
-
+        artworkInGameRepository.save(artworkInGame1);
+        artworkInGameRepository.save(artworkInGame2);
 
     }
 

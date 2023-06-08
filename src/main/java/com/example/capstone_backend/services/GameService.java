@@ -47,20 +47,20 @@ public class GameService {
         return gameRepository.findById(id);
     }
 
+
+
     public Game createNewGame(Long playerId){
-//
-        List<ArtworkInGame> randomlySelectedArtworkForGame = continentRandomService.getRandomContinent();
+//        create game object with random artworkInGame array (say 10 artworks) and the identified player (using id))
+        // ArtworkInGame artworkInGame = artworkInGameService.getRandomArtworkList();
+        List<ArtworkInGame> artworkInGame = artworkInGameService.generateRandomArtworkList();
         Game game = new Game(
-                continent,
                 playerService.getPlayerById(playerId).get()
         );
-//        save the game
+        game.setGameArtworkList(artworkInGame);
+////        save the game
         gameRepository.save(game);
-//        return a reply
-        return new Reply(game.getScore(), game.maxScore(), game.getPenalty(), "How many countries can you name in " + continent.getName());
-
-//   TODO: If we were to add a GameMode we would have to add GameMode as a class, pass it into the properties and constructor of Game, and in the GameController and GameServices we need to also have GameMode in the parameter
-//   TODO: Also, in this method, we need to create a variable for gameMode and at the end, when returning and reply, use an if statement (for the mode)
+////        return the game
+        return game;
     }
 
 
