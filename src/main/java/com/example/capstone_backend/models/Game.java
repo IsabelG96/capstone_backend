@@ -25,19 +25,19 @@ public class Game {
 
     @ManyToOne
     @JoinColumn(name= "player_id")
-    @JsonIgnoreProperties({"games"})
+    @JsonIgnoreProperties({"artworksInGameList"})
     private Player player;
 
-    @JsonIgnoreProperties({"games", "artwork"})
+    @JsonIgnoreProperties({"artworksInGameList", "artwork"})
     @OneToMany(mappedBy = "game")
-    private List<ArtworkInGame> artworks;
+    private List<ArtworkInGame> gameArtworkList;
 
     public Game(Player player) {
         this.penalty = 0;
         this.score = 0;
         this.complete = false;
         this.player = player;
-        this.artworks = new ArrayList<>();
+        this.gameArtworkList = new ArrayList<>();
     }
 
     public Game(){}
@@ -82,12 +82,12 @@ public class Game {
         this.player = player;
     }
 
-    public List<ArtworkInGame> getArtworks() {
-        return artworks;
+    public List<ArtworkInGame> getGameArtworkList() {
+        return gameArtworkList;
     }
 
-    public void setArtworks(List<ArtworkInGame> artworks) {
-        this.artworks = artworks;
+    public void setGameArtworkList(List<ArtworkInGame> gameArtworkList) {
+        this.gameArtworkList = gameArtworkList;
     }
 }
 

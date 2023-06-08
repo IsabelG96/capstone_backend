@@ -31,9 +31,9 @@ public class Artwork {
     @Column(name="url")
     private String url;
 
-    @JsonIgnoreProperties({"artwork", "games"})
+    @JsonIgnoreProperties({"artwork", "artworksInGameList"})
     @OneToMany(mappedBy = "artwork")
-    private List<ArtworkInGame> games;
+    private List<ArtworkInGame> artworksInGameList;
 
 
 
@@ -44,7 +44,7 @@ public class Artwork {
         this.value = value;
         this.rarityLevel = rarityLevel;
         this.url = url;
-        this.games = new ArrayList<>();
+        this.artworksInGameList = new ArrayList<>();
     }
 
     public Artwork(){}
@@ -97,11 +97,11 @@ public class Artwork {
         this.url = url;
     }
 
-    public List<ArtworkInGame> getGames() {
-        return games;
+    public List<ArtworkInGame> getArtworksInGameList() {
+        return artworksInGameList;
     }
 
-    public void setGames(List<ArtworkInGame> games) {
-        this.games = games;
+    public void setArtworksInGameList(List<ArtworkInGame> artworksInGameList) {
+        this.artworksInGameList = artworksInGameList;
     }
 }

@@ -16,12 +16,12 @@ public class ArtworkInGame {
 
     @ManyToOne
     @JoinColumn(name = "game_id")
-    @JsonIgnoreProperties({"games", "artworksInGame"})
+    @JsonIgnoreProperties({"artworksInGameList", "artworksInGame"})
     private Game game;
 
     @ManyToOne
     @JoinColumn(name = "artwork_id")
-    @JsonIgnoreProperties({"artworks", "artworksInGame"})
+    @JsonIgnoreProperties({"gameArtworkList", "artworksInGame"})
     private Artwork artwork;
 
     public ArtworkInGame(Game game, Artwork artwork) {

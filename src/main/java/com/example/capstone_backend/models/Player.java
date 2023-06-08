@@ -18,7 +18,7 @@ public class Player {
     @Column(name = "name")
     private String name;
 
-    @JsonIgnoreProperties({"player", "artworks"})
+    @JsonIgnoreProperties({"player", "gameArtworkList"})
     @OneToMany(mappedBy ="player")
     private List<Game> games;
 
