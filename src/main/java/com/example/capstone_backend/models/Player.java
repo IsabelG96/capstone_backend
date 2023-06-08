@@ -18,17 +18,17 @@ public class Player {
     @Column(name = "name")
     private String name;
 
+    @JsonIgnoreProperties({"player", "artworks"})
     @OneToMany(mappedBy ="player")
-    @JsonIgnoreProperties({"player"})
     private List<Game> games;
 
-    @Column(name = "highestScore")
-    private int highestScore;
+//    @Column(name = "highestScore")
+//    private int highestScore;
 
     public Player(String name){
         this.name = name;
         this.games = new ArrayList<>();
-        this.highestScore = 0;
+//        this.highestScore = 0;
     }
 
     public Player(){}
@@ -57,13 +57,13 @@ public class Player {
         this.games = games;
     }
 
-    public int getHighestScore() {
-        return highestScore;
-    }
-
-    public void setHighestScore(int highestScore) {
-        this.highestScore = highestScore;
-    }
+//    public int getHighestScore() {
+//        return highestScore;
+//    }
+//
+//    public void setHighestScore(int highestScore) {
+//        this.highestScore = highestScore;
+//    }
 }
 
 
