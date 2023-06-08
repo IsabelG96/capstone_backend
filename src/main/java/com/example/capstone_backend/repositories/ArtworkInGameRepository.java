@@ -3,5 +3,9 @@ package com.example.capstone_backend.repositories;
 import com.example.capstone_backend.models.ArtworkInGame;
 import org.springframework.data.jpa.repository.JpaRepository;
 
+import java.util.List;
+
 public interface ArtworkInGameRepository extends JpaRepository<ArtworkInGame, Long> {
+    List<ArtworkInGame> findByGameId(Long game_id);
 }
+

@@ -47,29 +47,31 @@ public class GameService {
         return gameRepository.findById(id);
     }
 
-
-
-
+    public Game createBlankGame(Long playerId){
+        Game game = new Game(
+                playerService.getPlayerById(playerId).get()
+        );
+        return gameRepository.save(game);
+    }
     public Game createNewGame(Long playerId){
 //        create game object with random artworkInGame array (say 10 artworks) and the identified player (using id))
         // ArtworkInGame artworkInGame = artworkInGameService.getRandomArtworkList();
 //       create game with playerId
-        Game game = new Game(
-                playerService.getPlayerById(playerId).get()
-        );
+        Game game1 = createBlankGame(playerId);
 //        fetch 10 random Ids from artwork repo
-
 //        create 10 artworkInGame objects with game id and 10 random artwork ids
-        Long gameId = game.getId();
+        artworkInGameService.createNewArtworkInGame(game1);
 //        get artworkInGame list by doing a get
-        List<ArtworkInGame> artworkInGame = artworkInGameService.generateRandomArtworkList(gameId);
 
-        game.setGameArtworkList(artworkInGame);
-////        save the game
-        gameRepository.save(game);
+
+//        List<ArtworkInGame> artworkInGame = artworkInGameService.generateRandomArtworkList(game1);
+//
+        game1.setGameArtworkList(artworkInGameService.findByGameId(game1.getId()));
+//////        save the game
+        gameRepository.save(game1);
 
 ////        return the game
-        return game;
+        return game1;
     }
 
 

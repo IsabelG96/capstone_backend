@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
+import java.util.Random;
 
 @Service
 public class ArtworkService {
@@ -23,6 +24,16 @@ public class ArtworkService {
     public Optional<Artwork> getArtworkById(Long id){
         return artworkRepository.findById(id);
     }
+
+    public Artwork generateRandomArtwork(){
+        Random randomId = new Random();
+
+        Long random1 = randomId.nextLong(1, 11);
+        Artwork randomArtwork = artworkRepository.findById(random1).get();
+        return randomArtwork;
+    }
+
+
 
 
 
