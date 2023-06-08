@@ -1,15 +1,28 @@
 package com.example.capstone_backend.models;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import jakarta.persistence.*;
+
 import java.util.ArrayList;
 import java.util.List;
 
+@Entity
+@Table(name = "players")
 public class Player {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+
+    @Column(name = "name")
     private String name;
 
+    @OneToMany(mappedBy ="player")
+    @JsonIgnoreProperties({"player"})
     private List<Game> games;
 
+    @Column(name = "highestScore")
     private int highestScore;
 
     public Player(String name){

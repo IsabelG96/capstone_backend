@@ -1,11 +1,27 @@
 package com.example.capstone_backend.models;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import jakarta.persistence.*;
+
+@Entity
+@Table(name="artworksInGame")
 public class ArtworkInGame {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
+    @Column(name = "stolen")
     private Boolean stolen;
 
+    @ManyToOne
+    @JoinColumn(name = "game_id")
+    @JsonIgnoreProperties({"games", "artworksInGame"})
     private Game game;
 
+    @ManyToOne
+    @JoinColumn(name = "artwork_id")
+    @JsonIgnoreProperties({"artworks", "artworksInGame"})
     private Artwork artwork;
 
     public ArtworkInGame(Game game, Artwork artwork) {
