@@ -49,16 +49,25 @@ public class GameService {
 
 
 
+
     public Game createNewGame(Long playerId){
 //        create game object with random artworkInGame array (say 10 artworks) and the identified player (using id))
         // ArtworkInGame artworkInGame = artworkInGameService.getRandomArtworkList();
-        List<ArtworkInGame> artworkInGame = artworkInGameService.generateRandomArtworkList();
+//       create game with playerId
         Game game = new Game(
                 playerService.getPlayerById(playerId).get()
         );
+//        fetch 10 random Ids from artwork repo
+
+//        create 10 artworkInGame objects with game id and 10 random artwork ids
+        Long gameId = game.getId();
+//        get artworkInGame list by doing a get
+        List<ArtworkInGame> artworkInGame = artworkInGameService.generateRandomArtworkList(gameId);
+
         game.setGameArtworkList(artworkInGame);
 ////        save the game
         gameRepository.save(game);
+
 ////        return the game
         return game;
     }

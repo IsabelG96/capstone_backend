@@ -45,12 +45,13 @@ public class ArtworkInGameService {
 
 
 
-    public void generateRandomArtworkList(Long gameId){
+    public List<ArtworkInGame> generateRandomArtworkList(Long gameId){
         Random randomId = new Random();
 
         Long random1 = randomId.nextLong(1, 11);
         Long random2 = randomId.nextLong(1, 11);
 // TODO: refactor into artwork and game service
+
         Game game = gameRepository.findById(gameId).get();
         // Artwork has artistName, title, value, rarityLevel, url, listOfArtworkInGame
         Artwork artwork1 = artworkRepository.findById(random1).get();
@@ -61,6 +62,9 @@ public class ArtworkInGameService {
 
         artworkInGameRepository.save(artworkInGame1);
         artworkInGameRepository.save(artworkInGame2);
+//        artworkRepository.findByGameId(gameId);
+        List<ArtworkInGame> artworkList1 = Arrays.asList(artworkInGame1, artworkInGame2);
+        return artworkList1;
 
     }
 
