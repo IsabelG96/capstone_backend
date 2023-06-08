@@ -63,4 +63,6 @@ public class ArtworkInGame {
     public void setArtwork(Artwork artwork) {
         this.artwork = artwork;
     }
+
+
 }

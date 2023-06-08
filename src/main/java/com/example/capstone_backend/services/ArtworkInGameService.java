@@ -8,9 +8,7 @@ import com.example.capstone_backend.repositories.ArtworkRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.List;
-import java.util.Optional;
-import java.util.Random;
+import java.util.*;
 
 @Service
 public class ArtworkInGameService {
@@ -18,14 +16,11 @@ public class ArtworkInGameService {
     @Autowired
     ArtworkInGameRepository artworkInGameRepository;
 
-
     @Autowired
     ArtworkRepository artworkRepository;
 
-
-
-
-
+    @Autowired
+    ArtworkService artworkService;
 
 
     // get all artworks in game
@@ -41,10 +36,30 @@ public class ArtworkInGameService {
 
 
     // method that randomly generates 10 artwork from ArtworkRepository
+
+
+
+
     public Artwork getRandomArtwork(){
         Random randomId = new Random();
-        Long random = randomId.nextLong(1, 6);
-        return continentRepository.findById(random).get();
+        Long random1 = randomId.nextLong(1, 11);
+        Long random2 = randomId.nextLong(1, 11);
+
+        List<ArtworkInGame> listOfArtwork = new ArrayList<>();
+//        Artwork artwork1 = artworkRepository.findById(random1).get();
+//
+//        Artwork artwork2 = artworkRepository.findById(random2).get();
+        listOfArtwork.add(random1);
+        listOfArtwork.setArtwork(Arrays.asList(artwork1, artwork2));
+
+        return null;
+
+
+
+
+
+
+
     }
 
 
