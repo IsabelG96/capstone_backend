@@ -30,6 +30,7 @@ public DataLoader() {}
     Game game1 = new Game(player1);
     gameRepository.save(game1);
 
+
     Artwork artwork1 = new Artwork(
             "Vincent van Gogh",
             "Sunflowers",
@@ -38,6 +39,7 @@ public DataLoader() {}
             "url"
     );
     artworkRepository.save(artwork1);
+
 
     Artwork artwork2 = new Artwork(
             "Claude Monet",
@@ -48,6 +50,7 @@ public DataLoader() {}
     );
     artworkRepository.save(artwork2);
 
+
     Artwork artwork3 = new Artwork(
             "Vincent van Gogh",
             "Starry Night",
@@ -56,6 +59,7 @@ public DataLoader() {}
             "url"
     );
     artworkRepository.save(artwork3);
+
 
     Artwork artwork4 = new Artwork(
             "Artemisia Gentileschi",
@@ -76,6 +80,7 @@ public DataLoader() {}
     );
     artworkRepository.save(artwork5);
 
+
     Artwork artwork6 = new Artwork(
             "George Stubbs",
             "Whistlejacket",
@@ -84,6 +89,7 @@ public DataLoader() {}
             "url"
     );
     artworkRepository.save(artwork6);
+
 
     Artwork artwork7 = new Artwork(
             "Frida Kahlo",
@@ -94,6 +100,7 @@ public DataLoader() {}
     );
     artworkRepository.save(artwork7);
 
+
     Artwork artwork8 = new Artwork(
             "Paul Cezanne",
             "The Basket of Apples",
@@ -102,6 +109,7 @@ public DataLoader() {}
             "url"
     );
     artworkRepository.save(artwork8);
+
 
     Artwork artwork9 = new Artwork(
             "Xu Bing",
@@ -112,6 +120,7 @@ public DataLoader() {}
     );
     artworkRepository.save(artwork9);
 
+
     Artwork artwork10 = new Artwork(
             "Frank Bowling",
             "Remember Thine Eyes",
@@ -120,6 +129,7 @@ public DataLoader() {}
             "url"
     );
     artworkRepository.save(artwork10);
+
 
     Artwork artwork11 = new Artwork(
             "Carel Fabritius",
@@ -130,6 +140,7 @@ public DataLoader() {}
     );
     artworkRepository.save(artwork11);
 
+
     Artwork artwork12 = new Artwork(
             "Johannes Vermeer",
             "Girl with the Pearl Earring",
@@ -137,7 +148,7 @@ public DataLoader() {}
             RarityLevel.COMMON,
             "url"
     );
-    artworkRepository.save(artwork11);
+    artworkRepository.save(artwork12);
 
 
     ArtworkInGame artworkInGame1 = new ArtworkInGame(game1, artwork1);
