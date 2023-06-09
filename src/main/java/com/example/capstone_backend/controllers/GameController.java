@@ -44,9 +44,13 @@ public class GameController {
 //    }
 
     @GetMapping
-    public ResponseEntity<List<Game>> getAllIncompleteGamesForPlayer(@RequestParam (required = false, name = "player_id") Long playerId) {
-        if (playerId != null) {
-            return new ResponseEntity<>(gameService.getGamesByIdAndComplete(playerId), HttpStatus.OK);
+    public ResponseEntity<List<Game>> getAllIncompleteGamesForPlayer(@RequestParam (required = false, name = "player_id") Long playerId,
+                                                                     @RequestParam (required = false, name = "complete") Boolean complete) {
+        if (playerId != null && complete != null) {
+            return new ResponseEntity<>(gameService.getAllGamesByPlayerIdAndComplete(playerId, complete), HttpStatus.OK);
+        }
+        else if (playerId != null){
+            return new ResponseEntity<>(gameService.getAllGamesByPlayerId(playerId), HttpStatus.OK);
         }
         return new ResponseEntity<>(gameService.getAllGames(), HttpStatus.OK);
     }
@@ -61,8 +65,6 @@ public class GameController {
             return new ResponseEntity<>(null, HttpStatus.NOT_FOUND);
         }
     }
-
-
 
 
 
