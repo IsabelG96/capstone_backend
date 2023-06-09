@@ -35,10 +35,18 @@ public class GameController {
 //        return new ResponseEntity<>(gameService.getAllGames(), HttpStatus.OK);
 //    }
 
+//    @GetMapping
+//    public ResponseEntity<List<Game>> getAllIncompleteGamesForPlayer(@RequestParam (required = false, name = "complete") Boolean complete) {
+//        if (complete != null) {
+//            return new ResponseEntity<>(gameService.getAllGamesByComplete(complete), HttpStatus.OK);
+//        }
+//        return new ResponseEntity<>(gameService.getAllGames(), HttpStatus.OK);
+//    }
+
     @GetMapping
-    public ResponseEntity<List<Game>> getAllIncompleteGamesForPlayer(@RequestParam (required = false, name = "complete") Boolean complete) {
-        if (complete != null) {
-            return new ResponseEntity<>(gameService.getAllGamesByComplete(complete), HttpStatus.OK);
+    public ResponseEntity<List<Game>> getAllIncompleteGamesForPlayer(@RequestParam (required = false, name = "player_id") Long playerId) {
+        if (playerId != null) {
+            return new ResponseEntity<>(gameService.getGamesByIdAndComplete(playerId), HttpStatus.OK);
         }
         return new ResponseEntity<>(gameService.getAllGames(), HttpStatus.OK);
     }
