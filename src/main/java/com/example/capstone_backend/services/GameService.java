@@ -10,6 +10,7 @@ import com.example.capstone_backend.repositories.GameRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.LinkedList;
 import java.util.List;
 import java.util.Optional;
 
@@ -82,5 +83,18 @@ public class GameService {
         return gameRepository.findAllByComplete(complete);
     }
 
-    public List<Game> getGamesByIdAndComplete
+    public List<Game> getGamesByIdAndComplete(Long playerId) {
+        List<Game> playersGames = new LinkedList<Game>(getAllGamesByPlayerId(playerId));
+
+        Game [] playersGamesIncomplete = playersGames.toArray(new Game[0]);
+        for (int i = 0; i < playersGames.size(); i++){
+            if (playersGames.get(i).getComplete() == false){
+
+                Game filteredGame = playersGames.get(i);
+               playersGamesIncomplete[i] = new Game(filteredGame.get);
+            }
+        }
+
+
+    }
 }
