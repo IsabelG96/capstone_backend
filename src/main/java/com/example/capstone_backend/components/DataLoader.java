@@ -30,15 +30,15 @@ public DataLoader() {}
     Game game1 = new Game(player1);
     gameRepository.save(game1);
 
-    Game game2 = new Game(player1);
-    game2.setComplete(true);
-    gameRepository.save(game2);
-
-    Player player2 = new Player("Kelly");
-    playerRepository.save(player2);
-
-    Game game3 = new Game(player2);
-    gameRepository.save(game3);
+//    Game game2 = new Game(player1);
+//    game2.setComplete(true);
+//    gameRepository.save(game2);
+//
+//    Player player2 = new Player("Kelly");
+//    playerRepository.save(player2);
+//
+//    Game game3 = new Game(player2);
+//    gameRepository.save(game3);
 
 
 
@@ -166,8 +166,14 @@ public DataLoader() {}
 
 
     ArtworkInGame artworkInGame1 = new ArtworkInGame(game1, artwork1);
+    artworkInGame1.setStolen(true);
     artworkInGameRepository.save(artworkInGame1);
 
+    ArtworkInGame artworkInGame2 = new ArtworkInGame(game1, artwork1);
+    artworkInGameRepository.save(artworkInGame2);
+
+    ArtworkInGame artworkInGame3 = new ArtworkInGame(game1, artwork1);
+    artworkInGameRepository.save(artworkInGame3);
 }
 
 

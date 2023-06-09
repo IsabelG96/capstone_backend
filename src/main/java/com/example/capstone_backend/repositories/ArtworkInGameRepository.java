@@ -7,5 +7,7 @@ import java.util.List;
 
 public interface ArtworkInGameRepository extends JpaRepository<ArtworkInGame, Long> {
     List<ArtworkInGame> findAllByGameId(Long game_id);
+
+    List<ArtworkInGame> findAllByGameIdAndStolen(Long gameId, Boolean stolen);
 }
 

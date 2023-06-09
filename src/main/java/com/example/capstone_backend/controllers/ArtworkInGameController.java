@@ -22,7 +22,14 @@ public class ArtworkInGameController {
     ArtworkInGameService artworkInGameService;
 
     @GetMapping
-    public ResponseEntity<List<ArtworkInGame>> getAllArtworkInGame() {
+    public ResponseEntity<List<ArtworkInGame>> getAllArtworkInGame(@RequestParam (required = false, name = "game_id") Long gameId,
+                                                                   @RequestParam (required = false, name = "stolen") Boolean stolen) {
+        if(gameId != null && stolen != null) {
+            return new ResponseEntity<>(artworkInGameService.getAllArtworkInGameByGameIdAndStolen(gameId, stolen), HttpStatus.OK);
+        }
+        else if(gameId != null){
+                return new ResponseEntity<>(artworkInGameService.getAllArtworkInGameByGameId(gameId), HttpStatus.OK);
+        }
         List<ArtworkInGame> artworkInGames = artworkInGameService.getAllArtworkInGame();
         return new ResponseEntity<>(artworkInGames, HttpStatus.OK);
     }

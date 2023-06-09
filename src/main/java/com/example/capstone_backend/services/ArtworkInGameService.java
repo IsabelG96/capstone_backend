@@ -108,4 +108,12 @@ public class ArtworkInGameService {
         stolenArtworkInGame.setStolen(stolen);
         return artworkInGameRepository.save(stolenArtworkInGame);
     }
+
+    public List<ArtworkInGame> getAllArtworkInGameByGameId(Long gameId) {
+        return artworkInGameRepository.findAllByGameId(gameId);
+    }
+
+    public List<ArtworkInGame> getAllArtworkInGameByGameIdAndStolen(Long gameId, Boolean stolen) {
+        return artworkInGameRepository.findAllByGameIdAndStolen(gameId, stolen);
+    }
 }
