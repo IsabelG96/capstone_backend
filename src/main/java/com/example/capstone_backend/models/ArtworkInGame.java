@@ -15,13 +15,13 @@ public class ArtworkInGame {
     private Boolean stolen;
 
     @ManyToOne
-    @JoinColumn(name = "game_id")
-    @JsonIgnoreProperties({"artworksInGameList", "artworksInGame"})
+    @JoinColumn(name = "game_id", nullable = false)
+    @JsonIgnoreProperties({"gameArtworkList", "player"})
     private Game game;
 
     @ManyToOne
-    @JoinColumn(name = "artwork_id")
-    @JsonIgnoreProperties({"gameArtworkList", "artworksInGame"})
+    @JoinColumn(name = "artwork_id", nullable = false)
+    @JsonIgnoreProperties({"artworksInGameList"})
     private Artwork artwork;
 
     public ArtworkInGame(Game game, Artwork artwork) {

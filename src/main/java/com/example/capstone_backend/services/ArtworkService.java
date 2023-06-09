@@ -5,6 +5,7 @@ import com.example.capstone_backend.repositories.ArtworkRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.LinkedList;
 import java.util.List;
 import java.util.Optional;
 import java.util.Random;
@@ -33,9 +34,18 @@ public class ArtworkService {
         return randomArtwork;
     }
 
-
-
-
+    public List<Artwork> artworkForGame(){
+//        generate 10 random art objects as list
+        List<Artwork> list = new LinkedList<Artwork>();
+        Artwork [] artworksForGame = list.toArray(new Artwork[10]);
+        for(int i = 0; i < 10; i++){
+            Artwork artwork = generateRandomArtwork();
+//            artworksInGames[i] = new ArtworkInGame();
+            artworksForGame[i]=new Artwork(artwork.getArtist(), artwork.getTitle(), artwork.getValue(), artwork.getRarityLevel(),artwork.getUrl());
+        }
+        System.out.println(list);
+        return list;
+    }
 
 
 

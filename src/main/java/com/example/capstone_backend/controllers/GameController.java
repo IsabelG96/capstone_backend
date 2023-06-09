@@ -40,7 +40,7 @@ public class GameController {
 
     @PostMapping
     public ResponseEntity<Game> createNewGame(@RequestParam long playerId){
-        Game game = gameService.createNewGame(playerId);
+        Game game = gameService.startNewGame(playerId);
         return new ResponseEntity<>(game, HttpStatus.CREATED);
     }
 

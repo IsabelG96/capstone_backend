@@ -31,7 +31,7 @@ public class Artwork {
     @Column(name="url")
     private String url;
 
-    @JsonIgnoreProperties({"artwork", "artworksInGameList"})
+    @JsonIgnoreProperties({"artwork", "game"})
     @OneToMany(mappedBy = "artwork")
     private List<ArtworkInGame> artworksInGameList;
 

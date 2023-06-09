@@ -68,17 +68,38 @@ public class ArtworkInGameService {
 //
 //    }
 
-//    generate artworkInGame object using the randomArtwork
-    public ArtworkInGame createNewArtworkInGame(Game game){
-        Artwork artwork1 = artworkService.generateRandomArtwork();
-        ArtworkInGame artworkInGame1 = new ArtworkInGame(game, artwork1);
+// generate artworkInGame object using the randomArtwork
+    public ArtworkInGame createNewArtworkInGame(Game game, Artwork artwork){
+//        Artwork artwork1 = artworkService.generateRandomArtwork();
+        ArtworkInGame artworkInGame1 = new ArtworkInGame(game, artwork);
         artworkInGameRepository.save(artworkInGame1);
         return artworkInGame1;
     }
 
-    public List<ArtworkInGame> findByGameId(Long gameId){
+    public void createArtworksInGameForGame (Game game){
+//        max 10 artworkInGame objects created per game id
+//        for every artworkInGame object generate 1 random artwork
+        List<Artwork> artworksForGame = artworkService.artworkForGame();
 
-        List<ArtworkInGame> artworkInGameList = artworkInGameRepository.findByGameId(gameId);
-        return artworkInGameList;
+        for(int i = 0; i < artworksForGame.size(); i++){
+            Artwork artwork = artworksForGame.get(i);
+            ArtworkInGame artworkInGame = new ArtworkInGame(game, artwork);
+            artworkInGameRepository.save(artworkInGame);
+        }
+
+    }
+
+//    Get Artworks for game
+    public List<ArtworkInGame> getArtworksInGameForGame(Game game){
+//        search repository for artworkInGame objects matching gameId
+        List<ArtworkInGame> artworksInGame = findAllByGameId(game.getId());
+//       set artworksInGame as the found list
+        game.setGameArtworkList(artworksInGame);
+        return game.getGameArtworkList();
+    }
+    public List<ArtworkInGame> findAllByGameId(Long gameId){
+
+        List<ArtworkInGame> artworkInGame = artworkInGameRepository.findAllByGameId(gameId);
+        return artworkInGame;
     }
 }

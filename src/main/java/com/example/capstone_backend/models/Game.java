@@ -25,10 +25,10 @@ public class Game {
 
     @ManyToOne
     @JoinColumn(name= "player_id")
-    @JsonIgnoreProperties({"artworksInGameList"})
+    @JsonIgnoreProperties({"games"})
     private Player player;
 
-    @JsonIgnoreProperties({"artworksInGameList", "artwork"})
+    @JsonIgnoreProperties({"game", "artwork"})
     @OneToMany(mappedBy = "game")
     private List<ArtworkInGame> gameArtworkList;
 

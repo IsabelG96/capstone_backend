@@ -1,6 +1,7 @@
 package com.example.capstone_backend.services;
 
 
+import com.example.capstone_backend.models.Artwork;
 import com.example.capstone_backend.models.ArtworkInGame;
 import com.example.capstone_backend.models.Game;
 import com.example.capstone_backend.repositories.ArtworkInGameRepository;
@@ -53,39 +54,24 @@ public class GameService {
         );
         return gameRepository.save(game);
     }
-    public Game createNewGame(Long playerId){
+    public Game startNewGame(Long playerId){
 //        create game object with random artworkInGame array (say 10 artworks) and the identified player (using id))
         // ArtworkInGame artworkInGame = artworkInGameService.getRandomArtworkList();
 //       create game with playerId
         Game game1 = createBlankGame(playerId);
+//        Game game1 = new Game(playerService.getPlayerById(playerId).get());
 //        fetch 10 random Ids from artwork repo
 //        create 10 artworkInGame objects with game id and 10 random artwork ids
-        artworkInGameService.createNewArtworkInGame(game1);
-//        get artworkInGame list by doing a get
+        ArtworkInGame [] artworksForGame = new ArtworkInGame[10];
+        for(int i = 0; i < 10; i++) {
+            Artwork artwork1 = artworkService.generateRandomArtwork();
+            artworksForGame[i] = artworkInGameService.createNewArtworkInGame(game1, artwork1);
+//            artworkInGameService.saveArtworkInGame(artworksForGame[i]);
+        }
+        artworkInGameService.getArtworksInGameForGame(game1);
 
-
-//        List<ArtworkInGame> artworkInGame = artworkInGameService.generateRandomArtworkList(game1);
-//
-        game1.setGameArtworkList(artworkInGameService.findByGameId(game1.getId()));
-//////        save the game
         gameRepository.save(game1);
-
-////        return the game
         return game1;
     }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 }

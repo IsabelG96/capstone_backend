@@ -6,6 +6,6 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import java.util.List;
 
 public interface ArtworkInGameRepository extends JpaRepository<ArtworkInGame, Long> {
-    List<ArtworkInGame> findByGameId(Long game_id);
+    List<ArtworkInGame> findAllByGameId(Long game_id);
 }
 
