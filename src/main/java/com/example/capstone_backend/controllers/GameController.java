@@ -70,9 +70,15 @@ public class GameController {
 
 
     @PostMapping
-    public ResponseEntity<Game> createNewGame(@RequestParam long playerId){
+    public ResponseEntity<Game> createNewGame(@RequestParam Long playerId){
         Game game = gameService.startNewGame(playerId);
         return new ResponseEntity<>(game, HttpStatus.CREATED);
+    }
+
+    @PutMapping(value = "/{id}")
+    public ResponseEntity<Game> updateGameObject(@RequestBody Game game, @PathVariable Long id) {
+        Game updatedGame = gameService.updateGame(game, id);
+        return new ResponseEntity<>(updatedGame, HttpStatus.OK);
     }
 
 

@@ -87,6 +87,17 @@ public class GameService {
         return gameRepository.findAllByPlayerIdAndComplete(playerId, complete);
     }
 
+    public Game updateGame(Game game, Long gameId) {
+//        Find the game to update by ID
+        Game gameToUpdate = gameRepository.findById(gameId).get();
+//        Set all the game properties
+        gameToUpdate.setScore(game.getScore());
+        gameToUpdate.setComplete(game.getComplete());
+        gameToUpdate.setPenalty(game.getPenalty());
+
+        return gameRepository.save(game);
+    }
+
 //    public List<Game> getAllGamesByComplete(Boolean complete) {
 //        return gameRepository.findAllByComplete(complete);
 //    }
