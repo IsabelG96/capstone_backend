@@ -30,6 +30,20 @@ public DataLoader() {}
     Game game1 = new Game(player1);
     gameRepository.save(game1);
 
+    Game game2 = new Game(player1);
+    game2.setComplete(true);
+    gameRepository.save(game2);
+
+    Player player2 = new Player("Kelly");
+    playerRepository.save(player2);
+
+    Game game3 = new Game(player2);
+    gameRepository.save(game3);
+
+
+
+
+
 
     Artwork artwork1 = new Artwork(
             "Vincent van Gogh",

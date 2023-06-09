@@ -74,4 +74,13 @@ public class GameService {
         return game1;
     }
 
+    public List<Game> getAllGamesByPlayerId(Long playerId) {
+        return gameRepository.findAllByPlayerId(playerId);
+    }
+
+    public List<Game> getAllGamesByComplete(Boolean complete) {
+        return gameRepository.findAllByComplete(complete);
+    }
+
+    public List<Game> getGamesByIdAndComplete
 }
