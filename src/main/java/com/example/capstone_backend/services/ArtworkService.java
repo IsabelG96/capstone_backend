@@ -5,10 +5,7 @@ import com.example.capstone_backend.repositories.ArtworkRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Optional;
-import java.util.Random;
+import java.util.*;
 
 @Service
 public class ArtworkService {
@@ -26,25 +23,40 @@ public class ArtworkService {
         return artworkRepository.findById(id);
     }
 
-    public Artwork generateRandomArtwork(){
-        Random randomId = new Random();
+    public List<Long> generateRandomUniqueIds(int count) {
+        List<Long> randomIds = new ArrayList<>();
+        List<Artwork> allArtworks = artworkRepository.findAll();
+        int totalArtworkCount = allArtworks.size();
 
-        Long random1 = randomId.nextLong(1, 11);
-        Artwork randomArtwork = artworkRepository.findById(random1).get();
-        return randomArtwork;
+        if (count > totalArtworkCount) {
+            // Handle the case where count is greater than the available artworks
+            count = totalArtworkCount;
+        }
+
+        Random random = new Random();
+        while (randomIds.size() < count) {
+            int randomIndex = random.nextInt(totalArtworkCount);
+            Long randomId = allArtworks.get(randomIndex).getId();
+
+            if (!randomIds.contains(randomId)) {
+                randomIds.add(randomId);
+            }
+        }
+
+        return randomIds;
     }
 
     public List<Artwork> artworkForGame(){
 //        generate 10 random art objects as list
-        List<Artwork> list = new LinkedList<Artwork>();
-        Artwork [] artworksForGame = list.toArray(new Artwork[10]);
+        List<Artwork> randomArt = new LinkedList<Artwork>();
+        Artwork [] artworksForGame = randomArt.toArray(new Artwork[10]);
         for(int i = 0; i < 10; i++){
-            Artwork artwork = generateRandomArtwork();
+            Artwork artwork = randomArt.get(i);
 //            artworksInGames[i] = new ArtworkInGame();
             artworksForGame[i]=new Artwork(artwork.getArtist(), artwork.getTitle(), artwork.getValue(), artwork.getRarityLevel(),artwork.getUrl());
         }
-        System.out.println(list);
-        return list;
+        System.out.println(randomArt);
+        return randomArt;
     }
 
 
