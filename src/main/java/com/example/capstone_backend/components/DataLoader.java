@@ -27,8 +27,6 @@ public DataLoader() {}
 
     playerRepository.save(player1);
 
-    Game game1 = new Game(player1);
-    gameRepository.save(game1);
 
 //    Game game2 = new Game(player1);
 //    game2.setComplete(true);
@@ -164,16 +162,6 @@ public DataLoader() {}
     );
     artworkRepository.save(artwork12);
 
-
-    ArtworkInGame artworkInGame1 = new ArtworkInGame(game1, artwork1);
-    artworkInGame1.setStolen(true);
-    artworkInGameRepository.save(artworkInGame1);
-
-    ArtworkInGame artworkInGame2 = new ArtworkInGame(game1, artwork1);
-    artworkInGameRepository.save(artworkInGame2);
-
-    ArtworkInGame artworkInGame3 = new ArtworkInGame(game1, artwork1);
-    artworkInGameRepository.save(artworkInGame3);
 }
 
 
