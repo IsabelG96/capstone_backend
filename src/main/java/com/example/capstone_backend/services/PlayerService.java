@@ -34,14 +34,4 @@ public class PlayerService {
         return player;
     }
 
-// if we were to update highScore for player, we would need a DTO possibly??
-//    public Player updatePlayer(Player player, Long id){
-//
-//    }
-
-//    public List<LoserBoardPlayer> getLoserBoard() {
-////        presorts list of players by games lost
-//        List<Player> playerList = playerRepository.findAll(Sort.by(Sort.Direction.DESC, "gamesLost"));
-//    }
-
 }

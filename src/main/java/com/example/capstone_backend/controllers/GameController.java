@@ -20,41 +20,20 @@ public class GameController {
     GameService gameService;
 
 
-
-//    @GetMapping
-//    public ResponseEntity<List<Game>> getAllGames() {
-//        List<Game> games = gameService.getAllGames();
-//        return new ResponseEntity<>(games, HttpStatus.OK);
-//    }
-
-//    @GetMapping
-//    public ResponseEntity<List<Game>> getAllIncompleteGamesForPlayer(@RequestParam (required = false, name = "player_id") Long playerId) {
-//        if (playerId != null) {
-//            return new ResponseEntity<>(gameService.getAllGamesByPlayerId(playerId), HttpStatus.OK);
-//        }
-//        return new ResponseEntity<>(gameService.getAllGames(), HttpStatus.OK);
-//    }
-
-//    @GetMapping
-//    public ResponseEntity<List<Game>> getAllIncompleteGamesForPlayer(@RequestParam (required = false, name = "complete") Boolean complete) {
-//        if (complete != null) {
-//            return new ResponseEntity<>(gameService.getAllGamesByComplete(complete), HttpStatus.OK);
-//        }
-//        return new ResponseEntity<>(gameService.getAllGames(), HttpStatus.OK);
-//    }
-
     @GetMapping
     public ResponseEntity<List<Game>> getAllIncompleteGamesForPlayer(@RequestParam (required = false, name = "player_id") Long playerId,
                                                                      @RequestParam (required = false, name = "complete") Boolean complete) {
+//        returns players games that are incomplete
         if (playerId != null && complete != null) {
             return new ResponseEntity<>(gameService.getAllGamesByPlayerIdAndComplete(playerId, complete), HttpStatus.OK);
         }
+//        returns all games for a particular player
         else if (playerId != null){
             return new ResponseEntity<>(gameService.getAllGamesByPlayerId(playerId), HttpStatus.OK);
         }
+//        returns all games
         return new ResponseEntity<>(gameService.getAllGames(), HttpStatus.OK);
     }
-
 
     @GetMapping(value = "/{id}")
     public ResponseEntity<Game> getGameById(@PathVariable Long id) {
@@ -65,9 +44,6 @@ public class GameController {
             return new ResponseEntity<>(null, HttpStatus.NOT_FOUND);
         }
     }
-
-
-
 
     @PostMapping
     public ResponseEntity<Game> createNewGame(@RequestParam Long playerId){
@@ -80,6 +56,4 @@ public class GameController {
         Game updatedGame = gameService.updateGame(game, id);
         return new ResponseEntity<>(updatedGame, HttpStatus.OK);
     }
-
-
 }

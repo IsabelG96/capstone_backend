@@ -19,14 +19,9 @@ public class ArtworkController {
     @Autowired
     ArtworkService artworkService;
 
-
-
     @GetMapping
     public ResponseEntity<List<Artwork>> getAllArtwork() {
         List<Artwork> artwork =artworkService.getAllArtwork();
         return new ResponseEntity<>(artwork, HttpStatus.OK);
     }
-
-
-
 }

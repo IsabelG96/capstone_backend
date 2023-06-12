@@ -34,17 +34,10 @@ public class PlayerController {
         }
     }
 
-
-
-
-
-
     // CREATE
     @PostMapping
     public ResponseEntity<Player> addNewPlayer(@RequestBody Player player) {
         Player addedPlayer = playerService.addNewPlayer(player);
         return new ResponseEntity<>(addedPlayer, HttpStatus.CREATED);
     }
-
-
 }

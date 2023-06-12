@@ -81,7 +81,6 @@ public class GameService {
         return game1;
     }
 
-
     public List<Game> getAllGamesByPlayerId(Long playerId) {
         return gameRepository.findAllByPlayerId(playerId);
     }
@@ -100,24 +99,4 @@ public class GameService {
 
         return gameRepository.save(game);
     }
-
-//    public List<Game> getAllGamesByComplete(Boolean complete) {
-//        return gameRepository.findAllByComplete(complete);
-//    }
-
-//    public List<Game> getGamesByIdAndComplete(Long playerId) {
-//        List<Game> playersGames = new LinkedList<Game>(getAllGamesByPlayerId(playerId));
-//
-//        int n = playersGames.size();
-//        Game[] playersGamesIncomplete = playersGames.toArray(new Game[n]);
-//        for (int i = 0; i < playersGames.size(); i++) {
-//            if (playersGames.get(i).getComplete() == false) {
-//
-//                Game filteredGame = playersGames.get(i);
-//                Player player = filteredGame.getPlayer();
-//                playersGamesIncomplete[i] = new Game(player);
-//            }
-//        }
-//        return List.of(playersGamesIncomplete);
-//    }
 }

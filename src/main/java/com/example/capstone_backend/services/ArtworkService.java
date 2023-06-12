@@ -27,6 +27,10 @@ public class ArtworkService {
         return artworkRepository.findById(id);
     }
 
+//    Generate random artwork list with unique id (no repeat in artworks)
+//    5 artworks with rarity level COMMON
+//    3 artworks with rarity level RARE
+//    2 artworks with rarity level LEGENDARY
     public List<Artwork> generateRandomArtworkList() {
 
         List<Artwork> artworkList = new ArrayList<>();
@@ -63,6 +67,7 @@ public class ArtworkService {
         return artworkList;
     }
 
+//    Function to get a random id and check if its already been called
     private List<Artwork> getRandomArtworkSubset(List<Artwork> artworkList, int count) {
         List<Artwork> randomSubset = new ArrayList<>();
         Random random = new Random();
@@ -83,50 +88,4 @@ public class ArtworkService {
 
         return randomSubset;
     }
-
-
-//    public List<Artwork> generateRandomUniqueArtworks(int count) {
-//        List<Artwork> randomArtworks = new ArrayList<>();
-//        List<Artwork> allArtworks = artworkRepository.findAll();
-//        int totalArtworkCount = allArtworks.size();
-//
-//        if (count > totalArtworkCount) {
-//            // Handle the case where count is greater than the available artworks
-//            count = totalArtworkCount;
-//        }
-//
-//        Random random = new Random();
-//        while (randomCommonArtworks.size() < 5) {
-//            int randomIndex = random.nextInt(totalArtworkCount);
-//            Artwork randomArtwork = allArtworks.get(randomIndex);
-//            // Artwork randomArtwork = allArtworks.get(randomIndex);
-//            if (!randomArtworks.contains(randomArtwork)
-//                && randomArtworks.contains(randomArtwork.getRarityLevel().COMMON)) {
-//                // if it doesn't contain random already
-//                // AND if random id list artworks doesn't already include X number of artworks which are COMMON/ RARE
-//                randomArtworks.add(randomArtwork);
-//            }
-//        }
-//
-//        return randomArtworks;
-//    }
-    //sort by rarity
-
-
-    public List<Artwork> artworkForGame(){
-//        generate 10 random art objects as list
-        List<Artwork> randomArt = new LinkedList<Artwork>();
-        Artwork [] artworksForGame = randomArt.toArray(new Artwork[10]);
-        for(int i = 0; i < 10; i++){
-            Artwork artwork = randomArt.get(i);
-//            artworksInGames[i] = new ArtworkInGame();
-            artworksForGame[i]=new Artwork(artwork.getArtist(), artwork.getTitle(), artwork.getValue(), artwork.getRarityLevel(),artwork.getUrl());
-        }
-        System.out.println(randomArt);
-        return randomArt;
-    }
-
-
-
-
 }

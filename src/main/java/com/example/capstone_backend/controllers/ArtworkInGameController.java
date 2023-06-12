@@ -24,16 +24,18 @@ public class ArtworkInGameController {
     @GetMapping
     public ResponseEntity<List<ArtworkInGame>> getAllArtworkInGame(@RequestParam (required = false, name = "game_id") Long gameId,
                                                                    @RequestParam (required = false, name = "stolen") Boolean stolen) {
+//        returns only stolen ArtworkInGame from a particular game
         if(gameId != null && stolen != null) {
             return new ResponseEntity<>(artworkInGameService.getAllArtworkInGameByGameIdAndStolen(gameId, stolen), HttpStatus.OK);
         }
+//        returns all ArtworkInGame in a particular game
         else if(gameId != null){
                 return new ResponseEntity<>(artworkInGameService.getAllArtworkInGameByGameId(gameId), HttpStatus.OK);
         }
+//        returns all ArtworkInGame objects
         List<ArtworkInGame> artworkInGames = artworkInGameService.getAllArtworkInGame();
         return new ResponseEntity<>(artworkInGames, HttpStatus.OK);
     }
-
 
     @GetMapping(value = "/{id}")
     public ResponseEntity<ArtworkInGame> getArtworkById(@PathVariable Long id) {
@@ -44,7 +46,6 @@ public class ArtworkInGameController {
             return new ResponseEntity<>(null, HttpStatus.NOT_FOUND);
         }
     }
-
 
 //    PATCH
     @PatchMapping(value = "/{id}")
