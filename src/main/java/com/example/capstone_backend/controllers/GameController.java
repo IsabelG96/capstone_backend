@@ -31,6 +31,9 @@ public class GameController {
         else if (playerId != null){
             return new ResponseEntity<>(gameService.getAllGamesByPlayerId(playerId), HttpStatus.OK);
         }
+        else if (complete != null){
+            return new ResponseEntity<>(gameService.getAllGamesByComplete(complete), HttpStatus.OK);
+        }
 //        returns all games
         return new ResponseEntity<>(gameService.getAllGames(), HttpStatus.OK);
     }

@@ -88,7 +88,9 @@ public class GameService {
     public List<Game> getAllGamesByPlayerIdAndComplete(Long playerId, Boolean complete) {
         return gameRepository.findAllByPlayerIdAndComplete(playerId, complete);
     }
-
+    public List<Game> getAllGamesByComplete(Boolean complete) {
+        return gameRepository.findAllByComplete(complete);
+    }
     public Game updateGame(Game game, Long gameId) {
 //        Find the game to update by ID
         Game gameToUpdate = gameRepository.findById(gameId).get();

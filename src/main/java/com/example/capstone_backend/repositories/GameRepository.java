@@ -11,5 +11,5 @@ public interface GameRepository extends JpaRepository<Game, Long> {
     List<Game> findAllByPlayerId(Long playerId);
     List<Game> findAllByPlayerIdAndComplete(Long playerId, Boolean complete);
 
-//    List<Game> findAllByComplete(Boolean complete);
+    List<Game> findAllByComplete(Boolean complete);
 }
