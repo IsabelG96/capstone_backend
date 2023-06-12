@@ -67,11 +67,11 @@ public class GameService {
 //        Game game1 = new Game(playerService.getPlayerById(playerId).get());
 //        fetch 10 random Ids from artwork repo
 //        create 10 artworkInGame objects with game id and 10 random artwork ids
-        List<Long> idsForArt = artworkService.generateRandomUniqueIds(10);
-        ArtworkInGame[] artworksForGame = new ArtworkInGame[idsForArt.size()];
+        List<Artwork> randomArtworks = artworkService.generateRandomArtworkList();
+        ArtworkInGame[] artworksForGame = new ArtworkInGame[randomArtworks.size()];
 
-        for (int i = 0; i < 10; i++) {
-            Artwork artwork1 = artworkService.getArtworkById(idsForArt.get(i)).get();
+        for (int i = 0; i < randomArtworks.size(); i++) {
+            Artwork artwork1 = randomArtworks.get(i);
             artworksForGame[i] = artworkInGameService.createNewArtworkInGame(game1, artwork1);
 //            artworkInGameService.saveArtworkInGame(artworksForGame[i]);
         }

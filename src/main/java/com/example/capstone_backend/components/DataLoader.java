@@ -48,7 +48,7 @@ public DataLoader() {}
     Artwork artwork1 = new Artwork(
             "Vincent van Gogh",
             "Sunflowers",
-            5,
+            3,
             RarityLevel.LEGENDARY,
             "url"
     );
@@ -58,8 +58,8 @@ public DataLoader() {}
     Artwork artwork2 = new Artwork(
             "Claude Monet",
             "Impression: Sunrise",
-            6,
-            RarityLevel.RARE,
+            1,
+            RarityLevel.COMMON,
             "url"
     );
     artworkRepository.save(artwork2);
@@ -68,7 +68,7 @@ public DataLoader() {}
     Artwork artwork3 = new Artwork(
             "Vincent van Gogh",
             "Starry Night",
-            8,
+            1,
             RarityLevel.COMMON,
             "url"
     );
@@ -78,7 +78,7 @@ public DataLoader() {}
     Artwork artwork4 = new Artwork(
             "Artemisia Gentileschi",
             "Judith Slaying Holofernes",
-            8,
+            3,
             RarityLevel.LEGENDARY,
             "url"
     );
@@ -88,7 +88,7 @@ public DataLoader() {}
     Artwork artwork5 = new Artwork(
             "Yayoi Kusama",
             "Pumpkin",
-            5,
+            2,
             RarityLevel.RARE,
             "url"
     );
@@ -98,7 +98,7 @@ public DataLoader() {}
     Artwork artwork6 = new Artwork(
             "George Stubbs",
             "Whistlejacket",
-            4,
+            1,
             RarityLevel.COMMON,
             "url"
     );
@@ -108,7 +108,7 @@ public DataLoader() {}
     Artwork artwork7 = new Artwork(
             "Frida Kahlo",
             "Self-Portrait with Monkey",
-            7,
+            2,
             RarityLevel.RARE,
             "url"
     );
@@ -118,7 +118,7 @@ public DataLoader() {}
     Artwork artwork8 = new Artwork(
             "Paul Cezanne",
             "The Basket of Apples",
-            9,
+            1,
             RarityLevel.COMMON,
             "url"
     );
@@ -128,7 +128,7 @@ public DataLoader() {}
     Artwork artwork9 = new Artwork(
             "Xu Bing",
             "A Book From The Sky",
-            7,
+            2,
             RarityLevel.RARE,
             "url"
     );
@@ -138,7 +138,7 @@ public DataLoader() {}
     Artwork artwork10 = new Artwork(
             "Frank Bowling",
             "Remember Thine Eyes",
-            9,
+            2,
             RarityLevel.RARE,
             "url"
     );
@@ -148,8 +148,8 @@ public DataLoader() {}
     Artwork artwork11 = new Artwork(
             "Carel Fabritius",
             "The Goldfinch",
-            7,
-            RarityLevel.RARE,
+            1,
+            RarityLevel.COMMON,
             "url"
     );
     artworkRepository.save(artwork11);
@@ -158,7 +158,7 @@ public DataLoader() {}
     Artwork artwork12 = new Artwork(
             "Johannes Vermeer",
             "Girl with the Pearl Earring",
-            6,
+            1,
             RarityLevel.COMMON,
             "url"
     );
