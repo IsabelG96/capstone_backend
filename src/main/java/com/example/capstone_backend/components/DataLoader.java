@@ -48,7 +48,7 @@ public DataLoader() {}
             "Sunflowers",
             3,
             RarityLevel.LEGENDARY,
-            "https://en.wikipedia.org/wiki/Sunflowers_%28Van_Gogh_series%29#/media/File:Vincent_Willem_van_Gogh_127.jpg"
+            "https://www.vincentvangogh.org/images/paintings/sunflowers.jpg"
     );
     artworkRepository.save(artwork1);
 
@@ -68,7 +68,7 @@ public DataLoader() {}
             "Starry Night",
             1,
             RarityLevel.COMMON,
-            "url"
+            "https://www.vincentvangogh.org/images/paintings/the-starry-night.jpg"
     );
     artworkRepository.save(artwork3);
 
@@ -124,7 +124,7 @@ public DataLoader() {}
             "A Book From The Sky",
             2,
             RarityLevel.RARE,
-            "url"
+            "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1452386414i/28497953.jpg"
     );
     artworkRepository.save(artwork9);
 //"https://collectionapi.metmuseum.org/api/collection/v1/iiif/78218/1312141/restricted"
@@ -143,7 +143,7 @@ public DataLoader() {}
             "The Goldfinch",
             1,
             RarityLevel.COMMON,
-            "https://en.wikipedia.org/wiki/The_Goldfinch_(painting)#/media/File:Fabritius-vink.jpg"
+            "https://www.mauritshuis.nl/media/h0kpo0fg/0605_repro.jpg?center=0.25931301636041137,0.77457098283931358&mode=crop&width=3840&rnd=132902566749100000&quality=70"
     );
     artworkRepository.save(artwork11);
 
