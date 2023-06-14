@@ -71,7 +71,6 @@ public DataLoader() {}
             "url"
     );
     artworkRepository.save(artwork3);
-//    https://upload.wikimedia.org/wikipedia/commons/thumb/e/ea/Van_Gogh_-_Starry_Night_-_Google_Art_Project.jpg/1513px-Van_Gogh_-_Starry_Night_-_Google_Art_Project.jpg?20121101035929"
 
     Artwork artwork4 = new Artwork(
             "Artemisia Gentileschi",
