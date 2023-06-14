@@ -80,7 +80,6 @@ public DataLoader() {}
             "url"
     );
     artworkRepository.save(artwork4);
-// "https://upload.wikimedia.org/wikipedia/commons/thumb/5/50/Artemisia_Gentileschi_-_Giuditta_decapita_Oloferne_-_Google_Art_Project-Adjust.jpg/1280px-Artemisia_Gentileschi_-_Giuditta_decapita_Oloferne_-_Google_Art_Project-Adjust.jpg"
 
     Artwork artwork5 = new Artwork(
             "Yayoi Kusama",
