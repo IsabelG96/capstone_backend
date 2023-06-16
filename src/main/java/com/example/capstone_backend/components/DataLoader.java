@@ -23,26 +23,62 @@ public DataLoader() {}
 @Override
     public void run(ApplicationArguments args) throws Exception{
 
+    //players for dataloader
     Player player1 = new Player("Hayan");
 
+    Player player2 = new Player("Issy");
+
+    Player player3 = new Player("Katie");
+
+    Player player4 = new Player("Stella");
+
+    Player player5 = new Player("Kelly");
+
     playerRepository.save(player1);
+    playerRepository.save(player2);
+    playerRepository.save(player3);
+    playerRepository.save(player4);
+    playerRepository.save(player5);
+
+//games for dataloader
+    Game game1 = new Game(player1);
+    game1.setScore(12);
+    game1.setComplete(true);
+
+    gameRepository.save(game1);
+
+    Game game2 = new Game(player2);
+    game2.setScore(10);
+    game2.setComplete(true);
+
+    gameRepository.save(game2);
+
+    Game game3 = new Game(player3);
+    game3.setScore(8);
+    game3.setComplete(true);
+
+    gameRepository.save(game3);
+
+    Game game4 = new Game(player4);
+    game4.setScore(15);
+    game4.setComplete(true);
+
+    gameRepository.save(game4);
+
+    Game game5 = new Game(player5);
+    game5.setScore(5);
+    game5.setComplete(true);
+
+    gameRepository.save(game5);
+
+    Game game6 = new Game(player1);
+    game6.setScore(3);
+    game6.setComplete(true);
+
+    gameRepository.save(game6);
 
 
-//    Game game2 = new Game(player1);
-//    game2.setComplete(true);
-//    gameRepository.save(game2);
-//
-//    Player player2 = new Player("Kelly");
-//    playerRepository.save(player2);
-//
-//    Game game3 = new Game(player2);
-//    gameRepository.save(game3);
-
-
-
-
-
-
+// artworks for game
     Artwork artwork1 = new Artwork(
             "Vincent van Gogh",
             "Sunflowers",
