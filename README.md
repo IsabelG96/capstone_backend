@@ -45,9 +45,9 @@ The `services` package has 5 classes, namely `ArtworkInGameService`, `ArtworkSer
 The `controllers` package consists of 4 classes `PlayerController`, `GameController`, `ArtworkInGameController` and `Artwork` which enables you to perform different requests corresponding to the `CRUD` functionalities
 The `DataLoader` in the `components` package is used to pre-populate the `artworks` table and added a few `players` in the database.You may wish to connect to Postico to view/inspect the tables.
 
-## UML Diagram
+### UML Diagram
 ![Screenshot 2023-06-19 at 10 05 13](https://github.com/IsabelG96/capstone_backend/assets/56633439/ea009a32-0ad7-41fe-9522-8929242c2f95)
 
-## ERD (for database structure)
+### ERD (for database structure)
 ![Screenshot 2023-06-19 at 10 05 34](https://github.com/IsabelG96/capstone_backend/assets/56633439/d58be084-d1c4-4d76-a7a2-9a1ee782a8ab)
 
