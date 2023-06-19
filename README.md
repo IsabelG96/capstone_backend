@@ -64,7 +64,7 @@ The `DataLoader` in the `components` package is used to pre-populate the `artwor
 
 
 * Follow these steps to install and run the code:
-    - Clone the repositories to your local machine: git clone from `https://github.com/IsabelG96/capstone_backend` (backend) and `https://github.com/KKLW97/capstone_front_end`.
+    - Clone the repositories to your local machine: git clone from https://github.com/IsabelG96/capstone_backend (backend) and https://github.com/KKLW97/capstone_front_end.
     - Create a new database in your terminal called `capstone_backend`.
     - Open the file in IntelliJ IDEA. 
     - Update the application.properties file with your database credentials.
