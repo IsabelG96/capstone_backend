@@ -188,7 +188,8 @@ The `DataLoader` in the `components` package is used to pre-populate the `artwor
 </table>
 
 
-## Github Username:
+## Collaborators
+### Name: Github Username
 - Kelly Wong: KKLW97
 - Katie Bamford: klb545
 - Hayan Butt: HayanButt
