@@ -118,10 +118,10 @@ The `DataLoader` in the `components` package is used to pre-populate the `artwor
     
    <tr>
       <td>GET</td>
-      <td>Default: /artworksInGame, For specified game id: /artworksInGame?game_id={gameId}, for specified stolen boolean: /artworksInGame?stolen={true/false}, for both game id and boolean: /artworksInGame?game_id={gameId}&stolen={true/false}</td>
+ <td>Default: <code>/artworksInGame</code>, For specified game id: <code>/artworksInGame?game_id={gameId}</code>, for specified stolen boolean: <code>/artworksInGame?stolen={true/false}</code>, for both game id and boolean: <code>/artworksInGame?game_id={gameId}&stolen={true/false}</code></td>
       <td></td>
       <td>Gets all artworks in games.</td>
-      <td>Returns by default List of all <code>ArtworkInGame </code> objects which consists of an `id`,`stolen` boolean, `game` and `artwork` objects. When with the `@RequestParams` `game_id` or `stolen` boolean, it returns the information based on what is specified in the `@RequestParam`. For example, if you want all artworks in gamr for game id 1, then write `http://localhost:8080/artworksInGame?game_id=1`, for all artworks in game that are stolen , write `http://localhost:8080/artworksInGame?stolen=true`.</td>
+      <td>Returns by default List of all <code>ArtworkInGame </code> objects which consists of an <code>id</code>,<code>stolen</code> boolean, <code>game</code> and <code>artwork</code> objects. When with the <code>@RequestParams</code> <code>game_id</code> or <code>stolen</code> boolean, it returns the information based on what is specified in the <code>@RequestParam</code>. For example, if you want all artworks in gamr for game id 1, then write `http://localhost:8080/artworksInGame?game_id=1`, for all artworks in game that are stolen , write <code>http://localhost:8080/artworksInGame?stolen=true</code>.</td>
    </tr>
 
   <tr>
@@ -129,7 +129,7 @@ The `DataLoader` in the `components` package is used to pre-populate the `artwor
       <td>/artworksInGame/{id}</td>
       <td></td>
       <td>Gets the ArtworkInGame object of the Id specified.</td>
-      <td>Returns <code>ArtworkInGame </code> object of the specified id, which consists of an `id`,`stolen` boolean, `game` and `artwork` objects.</td>
+      <td>Returns <code>ArtworkInGame </code> object of the specified id, which consists of an <code>id</code>,<code>stolen</code> boolean, <code>game</code> and <code>artwork</code> objects.</td>
   </tr>
 
   <tr>
@@ -137,7 +137,7 @@ The `DataLoader` in the `components` package is used to pre-populate the `artwor
       <td>/artworksInGame/{id}?stolen={true}</td>
       <td></td>
       <td>Update the property `stolen` for a specified artork in game by Id.</td>
-      <td>The <code>artworkInGame</code> object with the specified Id, which consists of an `id`,`stolen` boolean, `game` and `artwork` objects</td>
+      <td>The <code>artworkInGame</code> object with the specified Id, which consists of an <code>id</code>,<code>stolen</code> boolean, <code>game</code> and <code>artwork</code> objects</td>
   </tr>
 
   <tr>  
