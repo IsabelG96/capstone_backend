@@ -118,7 +118,7 @@ The `DataLoader` in the `components` package is used to pre-populate the `artwor
     
    <tr>
       <td>GET</td>
-      <td>Default: /artworksInGame, /artworksInGame?game_id={gameId}, /artworksInGame?stolen={true/false}, /artworksInGame?game_id={gameId}&stolen={true/false}</td>
+      <td>Default: /artworksInGame, For specified game id: /artworksInGame?game_id={gameId}, for specified stolen boolean: /artworksInGame?stolen={true/false}, for both game id and boolean: /artworksInGame?game_id={gameId}&stolen={true/false}</td>
       <td></td>
       <td>Gets all artworks in games.</td>
       <td>Returns by default List of all <code>ArtworkInGame </code> objects which consists of an `id`,`stolen` boolean, `game` and `artwork` objects. When with the `@RequestParams` `game_id` or `stolen` boolean, it returns the information based on what is specified in the `@RequestParam`. For example, if you want all artworks in gamr for game id 1, then write `http://localhost:8080/artworksInGame?game_id=1`, for all artworks in game that are stolen , write `http://localhost:8080/artworksInGame?stolen=true`.</td>
