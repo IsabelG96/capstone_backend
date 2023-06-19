@@ -51,3 +51,12 @@ The `DataLoader` in the `components` package is used to pre-populate the `artwor
 ### ERD (for database structure)
 ![Screenshot 2023-06-19 at 10 05 34](https://github.com/IsabelG96/capstone_backend/assets/56633439/d58be084-d1c4-4d76-a7a2-9a1ee782a8ab)
 
+
+
+
+## Github Username:
+- Kelly Wong: KKLW97
+- Katie Bamford: klb545
+- Hayan Butt: HayanButt
+- Isabel Galwey: IsabelG96
+- Stella Annor: StellaA30
