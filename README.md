@@ -122,28 +122,60 @@ The `DataLoader` in the `components` package is used to pre-populate the `artwor
       <td></td>
       <td>Gets all artworks in games.</td>
       <td>Returns by default List of all <code>ArtworkInGame </code> objects which consists of an `id`,`stolen` boolean, `game` and `artwork` objects. When with the `@RequestParams` `game_id` or `stolen` boolean, it returns the information based on what is specified in the `@RequestParam`. For example, if you want all artworks in gamr for game id 1, then write `http://localhost:8080/artworksInGame?game_id=1`, for all artworks in game that are stolen , write `http://localhost:8080/artworksInGame?stolen=true`.</td>
-    </tr>
-  
-    
-      <tr>
-      <td>GET</td>
-      <td>/artworkinGame/{id}</td>
-      <td></td>
-      <td>Gets the player of the Id specified.</td>
-      <td>Returns <code>ArtworkInGame </code> object of the specified id, which consists of an `id`,`stolen` boolean, `game` and `artwork` objects.</td>
-    </tr>
-    
-    <tr>
-    <td></td>
-    
-    
-    </tr>
-  
-    
-  
+   </tr>
 
-   
-      
+  <tr>
+      <td>GET</td>
+      <td>/artworksInGame/{id}</td>
+      <td></td>
+      <td>Gets the ArtworkInGame object of the Id specified.</td>
+      <td>Returns <code>ArtworkInGame </code> object of the specified id, which consists of an `id`,`stolen` boolean, `game` and `artwork` objects.</td>
+  </tr>
+
+  <tr>  
+    <td>GET</td>  
+    <td>/artworks</td>  
+    <td></td>  
+    <td>Get all artworks.</td>  
+    <td>List of all artwork</td>  
+  </tr>  
+  
+  <tr>  
+    <td>GET</td>  
+    <td>/games OR /games?player_id=1 OR /games?complete=false OR /games?player_id=1&complete=false</td>  
+    <td></td>  
+    <td>Gets all games. Option to filter by player id, by complete status, or both.</td>  
+    <td>List of all games</td>  
+  </tr>  
+  <tr>  
+    <td>GET</td>  
+    <td>/games/{gameId}</td>  
+    <td></td>  
+    <td>Gets a specific game by its id.</td>  
+    <td>The Game object with the specified id.</td>  
+  </tr>  
+  
+  <tr>  
+    <td>POST</td>  
+    <td>/games?playerId=1</td>  
+    <td></td>  
+    <td>Creates a game for the player of player id passed into the param.</td>  
+    <td>The new Game object that has been created.</td>  
+  </tr>  
+  
+  <tr>  
+    <td>PUT</td>  
+    <td>/games/{gameId}</td>  
+    <td>  
+      Object: Game<br/>JSON:  
+        {  
+          "player": "[insert Player]"  
+        }  
+    </td>  
+    <td>Updates a game of the specified id.</td>  
+    <td>The Game object.</td>  
+  </tr>
+
   </tbody>
 </table>
 ## Github Username:
