@@ -168,25 +168,26 @@ The `DataLoader` in the `components` package is used to pre-populate the `artwor
     <td>/games?playerId=1</td>  
     <td></td>  
     <td>Creates a game for the player of player id passed into the param.</td>  
-    <td>The new Game object that has been created.</td>  
+    <td>The new <code>Game</code> object that has been created.</td>  
   </tr>  
   
   <tr>  
     <td>PUT</td>  
     <td>/games/{gameId}</td>  
-    <td>  
-      Object: Game<br/>JSON:  
-        {  
-          "player": "[insert Player]"  
-        }  
-    </td>  
+<td>  <strong>Object:</strong> Game<br/><br/><strong>JSON:</strong>
+
+```json
+{
+    "player": "[insert player name]"
+}
+```
+</td>  
     <td>Updates a game of the specified id.</td>  
-    <td>The Game object.</td>  
+    <td>The <code>Game</code> object.</td>  
   </tr>
 
   </tbody>
 </table>
-
 
 ## Collaborators
 ### Name: Github Username
