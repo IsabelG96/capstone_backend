@@ -132,6 +132,14 @@ The `DataLoader` in the `components` package is used to pre-populate the `artwor
       <td>Returns <code>ArtworkInGame </code> object of the specified id, which consists of an `id`,`stolen` boolean, `game` and `artwork` objects.</td>
   </tr>
 
+  <tr>
+      <td>PATCH</td>
+      <td>/artworksInGame/{id}?stolen={true}</td>
+      <td></td>
+      <td>Update the property `stolen` for a specified artork in game by Id.</td>
+      <td>The <code>artworkInGame</code> object with the specified Id, which consists of an `id`,`stolen` boolean, `game` and `artwork` objects</td>
+  </tr>
+
   <tr>  
     <td>GET</td>  
     <td>/artworks</td>  
