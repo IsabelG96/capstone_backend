@@ -70,6 +70,52 @@ The `DataLoader` in the `components` package is used to pre-populate the `artwor
     - Update the application.properties file with your database credentials.
     - Run the `CapstoneBackendApplicatio
 
+
+
+<table>
+  <thead>
+    <tr>
+      <th>Request</th>
+      <th>URL path: localhost:8080 </th>
+      <th>Body</th>
+      <th>Functionality</th>
+      <th>Information Returned</th>
+    </tr>
+  </thead>
+  <tbody>
+ <tr>
+      <td>POST</td>
+      <td>/players</td>
+      <td> <strong>Object:</strong> Player <br><br> <strong>JSON:</strong>
+
+```json
+{
+    "name": "[insert player name]"
+}
+```
+
+</td>
+      <td>Creates a new player</td>
+      <td>The <code>Player</code> object that was created.</td>
+    </tr>
+    <tr>
+      <td>GET</td>
+      <td>/players</td>
+      <td></td>
+      <td>Gets all players.</td>
+      <td>List of all <code>Player</code> objects which consists of player id, player name, and list of games.</td>
+    </tr>
+    <tr>
+      <td>GET</td>
+      <td>/players/{id}</td>
+      <td></td>
+      <td>Gets the player of the Id specified.</td>
+      <td>The <code>Player</code> object with the specified Id, which consists of player id, player name, and list of games</td>
+    </tr>
+   
+      
+  </tbody>
+</table>
 ## Github Username:
 - Kelly Wong: KKLW97
 - Katie Bamford: klb545
