@@ -183,7 +183,7 @@ The `DataLoader` in the `components` package is used to pre-populate the `artwor
 ```
 </td>  
     <td>Updates a game of the specified id.</td>  
-    <td>The <code>Game</code> object.</td>  
+    <td>Returns the <code>Game</code> object.</td>  
   </tr>
 
   </tbody>
