@@ -70,6 +70,33 @@ The `DataLoader` in the `components` package is used to pre-populate the `artwor
     - Update the application.properties file with your database credentials.
     - Run the `CapstoneBackendApplicatio
 
+
+ArtworkController
+- getAllArtwork
+
+GameController
+- GET
+  - path: /games
+  - param: required = false, name = "player_id"
+  - param: required = false, name = "complete"
+  - Functionality: Gets all games. Option to filter by player id and / or by complete status.
+- GET
+  - path: /games/{gameId} 
+  - Functionality: Gets a specific game by its id.
+- POST
+  - path: /games
+  - param: playerId
+  - Functionality: Creates a new game.
+- PUT
+  - path: /games/{gameId}
+  - request body:
+    - Object: Game
+    - JSON:
+      {
+        "player": "[insert Player]"
+      }
+  - Functionality: Updates a game.
+
 ## Github Username:
 - Kelly Wong: KKLW97
 - Katie Bamford: klb545
