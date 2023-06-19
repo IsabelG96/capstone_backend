@@ -40,9 +40,9 @@ The `models` package consists of 4 POJO classes which are used to define how the
 
 The `repositories` package consists of 4 repositories including `ArtworkRepository`, `ArtworkInRepository`, `GameRepository`, `PlayerRepository`.
 
-The `services` package has 5 classes, namely `ArtworkInGameService`, `ArtworkService`, `PlayerService`, `GameService` to handle game logic.
+The `services` package has 4 classes, namely `ArtworkInGameService`, `ArtworkService`, `PlayerService`, `GameService` to handle game logic.
 
-The `controllers` package consists of 4 classes `PlayerController`, `GameController`, `ArtworkInGameController` and `Artwork` which enables you to perform different requests corresponding to the `CRUD` functionalities
+The `controllers` package consists of 4 classes `PlayerController`, `GameController`, `ArtworkInGameController` and `ArtworkController` which enables you to perform different requests corresponding to the `CRUD` functionalities
 The `DataLoader` in the `components` package is used to pre-populate the `artworks` table and added a few `players` in the database.You may wish to connect to Postico to view/inspect the tables.
 
 ### UML Diagram
