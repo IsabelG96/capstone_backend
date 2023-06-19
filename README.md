@@ -53,6 +53,22 @@ The `DataLoader` in the `components` package is used to pre-populate the `artwor
 
 
 
+## Installation
+* To run the code, you will need:
+
+
+     Java 17
+     Postico (for Mac) or pgAdmin (for Windows) for the PostgreSQL database
+     IntelliJ IDEA
+     Postman 
+
+
+* Follow these steps to install and run the code:
+    - Clone the repository to your local machine: git clone from `https://github.com/IsabelG96/capstone_backend`.
+    - Create a new database in your terminal called `capstone_backend`.
+    - Open the file in IntelliJ IDEA. 
+    - Update the application.properties file with your database credentials.
+    - Run the `CapstoneBackendApplicatio
 
 ## Github Username:
 - Kelly Wong: KKLW97
