@@ -189,6 +189,17 @@ The `DataLoader` in the `components` package is used to pre-populate the `artwor
   </tbody>
 </table>
 
+## Random Artwork Generator
+
+The `ArtworkService` includes a method entitled `generateRandomArtwork` which is then used to create the `ArtworkInGame` objects for each game in the `GameService`. 
+
+1. First a new empty of Artwork objects is created, `artworkList`.  
+2. Then, the total list of artworks in the repository is called, `allArtworks`.
+3. The `stream` method (from `java.util`) is used to filter artworks by their  rarity level enum and collect them to lists by rarity. 
+4. After this, the `getRandomArtworkSubset` method is used to generate a certain number of artworks of each rarity randomly by ID. 
+5. These are then added to the `artworkList` for the game.
+6. This then affects the number of easy, medium and hard questions the player will get in each game, as well as the number of points they can win overall.
+
 ## Collaborators
 ### Name: Github Username
 - Kelly Wong: KKLW97
